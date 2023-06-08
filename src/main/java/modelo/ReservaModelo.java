@@ -66,6 +66,12 @@ public  Reserva getReserva(int id) {
 	}
 	return reserva;
 }
+	public boolean existeCodigo() {
+	boolean existe=false;
 	
+	
+		
+		return false;
+	}
 
 }
