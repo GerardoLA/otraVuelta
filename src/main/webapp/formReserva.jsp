@@ -56,6 +56,7 @@
 			</div>
 			<div class="col">
 				<h1>Info de la parcela reservada</h1>
+				<input type="hidden" name="id_parcela" value="${parcela.id}"/>
 				<table class="table">
 					<thead>
 						<tr>

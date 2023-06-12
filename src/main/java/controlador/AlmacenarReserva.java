@@ -36,6 +36,11 @@ public class AlmacenarReserva extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//TODO implementar la funcionalidad de almacenar reserva
 		//se abrirá la vista infoReserva
+		ParcelaModelo pm = new ParcelaModelo();
+		Parcela parcela = pm.getParcela(Integer.parseInt(request.getParameter("id_parcela")));
+		
+		request.setAttribute("parcela", parcela);
+		request.getRequestDispatcher("inforReserva.sp").forward(request, response);
 	}
 
 	/**
@@ -66,8 +71,8 @@ public class AlmacenarReserva extends HttpServlet {
 		reserva.setLuz(true);
 	}
 	
-	//comprobacion si el codigo de parcela existe, ok insertar...si no crear parcela
-	
+	//aqui hacer comprobacion si el codigo de parcela existe, ok insertar...si no crear parcela
+	reserva.setParcela(Integer.parseInt(request.getParameter("id_parcela")));
 	
 	rm.insertarReserva(reserva);
 
