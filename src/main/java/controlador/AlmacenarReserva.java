@@ -51,8 +51,8 @@ public class AlmacenarReserva extends HttpServlet {
 	Date inicio_reserva=null;
 	Date fin_reserva=null;
 	try {
-		inicio_reserva = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("inicio_reserva"));
-		fin_reserva = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fin_reserva"));
+		inicio_reserva = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("inicio_reserva"));
+		fin_reserva = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("fin_reserva"));
 		
 	} catch (ParseException e) {
 		// TODO Auto-generated catch block
@@ -65,6 +65,10 @@ public class AlmacenarReserva extends HttpServlet {
 	}else {
 		reserva.setLuz(true);
 	}
+	
+	//comprobacion si el codigo de parcela existe, ok insertar...si no crear parcela
+	
+	
 	rm.insertarReserva(reserva);
 
 	}

@@ -51,6 +51,22 @@ public class ParcelaModelo extends Conector {
 		}
 		return parcela;
 	}
-
+public boolean codigoExiste(String numero) {
+	boolean existe= false;
+	try {
+		pst = getConexion().prepareStatement("select numero from parcelas where parcelas=?");
+		pst.setString(1, numero);
+		ResultSet rs = pst.executeQuery();
+		rs.next();
+		if(numero.equals(rs.getString("numero"))){
+			existe=true;
+		}
+		getConexion().close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return existe;
+}
 
 }

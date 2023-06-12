@@ -45,7 +45,7 @@
 							
 					</tbody>
 				</table>
-				<a href="IniciarReserva" class="btn btn-secondary">iniciarReserva</a>
+				<a href="IniciarReserva?" class="btn btn-secondary">iniciarReserva</a>
 			</div>
 		</div>
 	</div>

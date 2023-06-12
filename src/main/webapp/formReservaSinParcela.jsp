@@ -52,8 +52,8 @@
 						</tr>
 					</table>
 					<input class="btn btn-primary" type="submit" value="Reservar" name="reservar" />
-					<label>Codigo:</label>
-					<input type="text" >
+					<label>CodigoParcela:</label>
+					<input type="text" name="codigo_parcela" />
 				</form>
 			</div>
 		</div>
